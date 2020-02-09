@@ -13,11 +13,32 @@ class ToDoViewController: UIViewController {
     var toDoArray = ["Learn Swift", "Build Apps", "Change the World", "Vacation"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+
+            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail"{
+        let destination = segue.destination as! ToDoDetailTableViewController
+        let selectedIndexPath = tableView.indexPathForSelectedRow!
+        destination.toDoItem = toDoArray[selectedIndexPath.row]
+        }
     }
+    @IBAction func unwindFromDetail(segue: UIStoryboardSegue){
+        let source = segue.source as! ToDoDetailTableViewController
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            toDoArray[selectedIndexPath.row] = source.toDoItem
+            tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+        } else {
+            let newIndexPath = IndexPath(row: toDoArray.count, section: 0)
+            toDoArray.append(source.toDoItem)
+            tableView.insertRows(at: [newIndexPath], with: .bottom)
+            tableView.scrollToRow(at: newIndexPath, at: .bottom, animated: true)
+        }
+    }
+            
+    
 
 
 }

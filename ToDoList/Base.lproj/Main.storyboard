@@ -139,7 +139,11 @@
                                 <action selector="cancelButtonPressed:" destination="Gcc-vv-xev" id="Zo3-zs-eZO"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zCf-68-ivc"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zCf-68-ivc">
+                            <connections>
+                                <segue destination="BSo-lG-wHu" kind="unwind" unwindAction="unwindFromDetailWithSegue:" id="XYC-d6-7iS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="3FV-oV-Adl" id="KOn-2I-9Ob"/>
@@ -149,6 +153,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFE-ak-2mI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BSo-lG-wHu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1699" y="131"/>
         </scene>
@@ -187,7 +192,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jre-cU-EAL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="108"/>
+            <point key="canvasLocation" x="649" y="-398"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
