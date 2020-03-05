@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 private let dateFormatter: DateFormatter = {
     print("yo ha creado un formatter para dates")
     let dateFormatter = DateFormatter()
