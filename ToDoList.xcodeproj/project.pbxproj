@@ -16,6 +16,8 @@
 		BE28E6CC23EF4F31007B7D2C /* ToDoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE28E6CB23EF4F31007B7D2C /* ToDoDetailTableViewController.swift */; };
 		BE30E6E623F0A34B006CC642 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE30E6E523F0A34B006CC642 /* ToDoItem.swift */; };
 		BEC87FC024108E6C00360776 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC87FBF24108E6C00360776 /* ListTableViewCell.swift */; };
+		BEC87FC22416AEEA00360776 /* ToDoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC87FC12416AEEA00360776 /* ToDoItems.swift */; };
+		BEC87FC42416B70700360776 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC87FC32416B70700360776 /* LocalNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		BE28E6CB23EF4F31007B7D2C /* ToDoDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailTableViewController.swift; sourceTree = "<group>"; };
 		BE30E6E523F0A34B006CC642 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		BEC87FBF24108E6C00360776 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		BEC87FC12416AEEA00360776 /* ToDoItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItems.swift; sourceTree = "<group>"; };
+		BEC87FC32416B70700360776 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +68,9 @@
 			children = (
 				BE28E6B723EF4065007B7D2C /* AppDelegate.swift */,
 				BE28E6B923EF4065007B7D2C /* SceneDelegate.swift */,
+				BEC87FC32416B70700360776 /* LocalNotificationManager.swift */,
 				BE30E6E523F0A34B006CC642 /* ToDoItem.swift */,
+				BEC87FC12416AEEA00360776 /* ToDoItems.swift */,
 				BE28E6BB23EF4065007B7D2C /* ToDoViewController.swift */,
 				BE28E6CB23EF4F31007B7D2C /* ToDoDetailTableViewController.swift */,
 				BEC87FBF24108E6C00360776 /* ListTableViewCell.swift */,
@@ -148,10 +154,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE28E6BC23EF4065007B7D2C /* ToDoViewController.swift in Sources */,
+				BEC87FC22416AEEA00360776 /* ToDoItems.swift in Sources */,
 				BE28E6B823EF4065007B7D2C /* AppDelegate.swift in Sources */,
 				BE30E6E623F0A34B006CC642 /* ToDoItem.swift in Sources */,
 				BE28E6CC23EF4F31007B7D2C /* ToDoDetailTableViewController.swift in Sources */,
 				BE28E6BA23EF4065007B7D2C /* SceneDelegate.swift in Sources */,
+				BEC87FC42416B70700360776 /* LocalNotificationManager.swift in Sources */,
 				BEC87FC024108E6C00360776 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
