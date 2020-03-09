@@ -6,11 +6,11 @@
 //  Copyright © 2020 Dawin Ye. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import UserNotifications
 
 struct LocalNotificationManager {
-    static func autherizeLocalNotifications(){
+    static func autherizeLocalNotifications(viewController: UIViewController){
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { (granted, error) in
             guard error == nil else {
                 print("error: \(error!.localizedDescription)")
@@ -20,10 +20,33 @@ struct LocalNotificationManager {
                 print("notification authorization granted")
             } else {
                 print("notifications not authorized")
-                //TODO: Put an alert in here telling the user what to do
+                //Put an alert in here telling the user what to do
+                DispatchQueue.main.async {
+                    viewController.oneButtonAlert(title: "Notifications Not Allowed", message: "Change that in the settings app")
+                }
+                
             }
         }
     }
+    
+    static func isAuthorized(completed: @escaping (Bool)->()){
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { (granted, error) in
+            guard error == nil else {
+                print("error: \(error!.localizedDescription)")
+                completed(false)
+                return
+            }
+            if granted {
+                print("notification authorization granted")
+                completed(true)
+            } else {
+                print("notifications not authorized")
+                //Put an alert in here telling the user what to do
+                completed(false)
+                }
+                
+            }
+        }
     static func setCalendarNotification(title: String, subtitle: String, body: String, badgeNumber: NSNumber?, sound: UNNotificationSound?, date: Date) -> String {
         // create content:
         let content = UNMutableNotificationContent()
@@ -53,3 +76,4 @@ struct LocalNotificationManager {
         return notificationID
     }
 }
+
